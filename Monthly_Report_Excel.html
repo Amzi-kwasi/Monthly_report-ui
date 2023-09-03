@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+   
+	<style type="text/css">
+
+		@charset "UTF-8";
+/******* Bootstrap Theming ********/
+@import "https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap";
+/*!
+ * Bootstrap v4.5.3 (https://getbootstrap.com/)
+ * Copyright 2011-2020 The Bootstrap Authors
+ * Copyright 2011-2020 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #E45F4E;
+  --secondary: #262626;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #ffffff;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: "Raleway", sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #848484;
+  background-color: #ffffff;
+}
+
+
+.input-container input {
+    border: none;
+    box-sizing: border-box;
+    outline: 0;
+    padding: .75rem;
+    position: relative;
+    width: 100%;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+
+.ft-legal {
+    padding: 6px 8px;
+  background-color: #1a1a1a;
+  width: 100%;
+  
+}
+
+.ft-p{
+  text-align: center;
+  color: orange;
+}
+
+#nav {
+background-color: #262626;
+    height: 40px;
+    min-width: min-content;
+    position: fixed;
+    width: 100%;
+    }
+
+.textarea{
+  background-color: cornsilk;
+}
+	</style>
+
+  <style type="text/css">
+    .table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    
+    td,.th{
+      border: 1px solid black;
+      padding: 2px;
+    }
+    .th-input[type="text"] {
+       padding: 8px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    }
+
+
+    .td-input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: none;
+    }
+
+
+  
+  label{
+    width: 100px;
+    float: left;
+    padding-top: 20px;
+  }
+  .form-control {
+    width: 200px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+  }
+
+
+  fieldset {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 3px;
+    border: 1px solid lightgrey;
+    width: 30px;
+    margin: auto;
+  }
+  .month-input{
+    padding: 8px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  input[type="date"]{
+background-color: white;
+color: black;
+padding: 8px;
+  }
+</style>
+
+<style type="text/css">
+  :root {
+    --primary-color: #302AE6;
+    --secondary-color: #536390;
+    --font-color: #424242;
+    --bg-color: #fff;
+    --heading-color: #292922;
+}
+
+[data-theme="dark"] {
+    --primary-color: #9A97F3;
+    --secondary-color: #818cab;
+    --font-color: #e1e1ff;
+    --bg-color: #000000;
+    --heading-color: #818cab;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+
+
+}
+
+
+
+[data-theme="dark"] .dialog_content {
+    color: white;
+    background-color: #262626;
+}
+
+
+[data-theme="dark"] td,.th{
+      border: 1px solid lightgrey;
+    }
+
+[data-theme="dark"] .navbarc a.act:hover {
+    color: green;
+    background-color: #ccffcc;
+    transition: 0.5s;
+}
+
+[data-theme="dark"] #myUL .raw a{
+  color: white;
+} 
+
+[data-theme="dark"] div.scrollmenu{
+  background-color: #262626;
+} 
+
+[data-theme="dark"] div.scrollmenu a{
+  color: white;
+}
+
+
+[data-theme="dark"] body{
+  color: white;
+  background-color: #000000;
+} 
+
+[data-theme="dark"] fieldset{
+  background-color: #1a1a1a;
+}
+
+[data-theme="dark"] .th{
+  background-color: #262626;
+  color: white;
+}
+
+[data-theme="dark"] input{
+  background-color: #262626;
+  color: white;
+}
+
+[data-theme="dark"] textarea{
+  background-color: #262626;
+  color: white;
+}
+
+[data-theme="dark"] .table{
+  background-color: #262626;
+}
+
+[data-theme="dark"] .search{
+  background-color: #262626;
+  color: white;
+}
+
+
+[data-theme="dark"] #myUL li a:hover:not(.header) {
+    background-color: #262626;
+    color: white;
+}
+
+[data-theme="dark"] .scrollmenu .scroact{
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+
+[data-theme="dark"] div.scrollmenu a:hover {
+    background-color: grey;
+    transition: 0.5s;
+}
+
+[data-theme="dark"] .slideshow-container{
+  background-color: #262626;
+}
+
+
+[data-theme="dark"] .dot-container{
+  background-color: #262626;
+}
+
+[data-theme="dark"] footer{
+  background-color: #262626;
+  color: white;
+}
+[data-theme="dark"] .container {
+  background-color: #262626;
+}
+
+[data-theme="dark"] .row{
+  background-color: #262626;
+}
+
+
+
+
+.theme-switch {
+        height: 34px;
+        position: fixed;
+        bottom: 60px;
+        width: 30px;
+    }
+
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: grey;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.5s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: grey;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.add{
+  color: green;
+  cursor: pointer;
+  text-align: left;
+}
+
+
+.clear{
+  color: white;
+  border: none;
+  background-color: red;
+  border-radius: 10px;
+  padding: 10px 12px;
+  position: absolute;
+  right: 20px;
+}
+
+.dialog{
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  }
+
+.dialog_content{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: white;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 2% auto 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+  height: 99vh;
+}
+
+.h61{
+  font-size: 15px;
+}
+
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
+#demo {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: cursive;
+  color: green;
+
+}
+
+
+#tdemo {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: cursive;
+  color: green;
+
+}
+
+.preloader{
+  background-color: #262626;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  color: white;
+}
+
+.text{
+  margin-top: 300px;
+  font-family: sans-serif;
+  font-size: 30px;
+}
+
+.navbarc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background:#1a1a1a;
+    z-index: 1;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.navbarc a {
+    color: white;
+    text-align: center;
+    padding: 6px 8px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+
+/* Change the color of links on hover */
+.navbarc a:hover {
+    background-color: #262626;
+    cursor: pointer;
+    border-radius: 10%;
+    color: white;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+
+
+.navbarc a.act {
+    color: green;
+}
+
+.navbarc a.act:hover {
+    color: green;
+    background-color: #ccffcc;
+    transition: 0.5s;
+}
+
+
+
+
+</style>
+</head>
+<body onload="Reminder()">
+  <div id="preloader" onload="Pre()" class="preloader">
+    <h3 class="text">Monthly Report</h3>
+  </div>
+
+
+<script type="text/javascript">
+  setTimeout(function Pre(){
+    document.getElementById("preloader").style.display="none";
+    document.getElementById("main").style.display="block";
+  },2000)
+</script>
+  <div id="main" style="display:none;">
+	 <div id="nav">
+        <a style="color:gold;">Monthly Report</a>
+       <a id="navDemo" style="color: whitesmoke;position: absolute;right: 20px;"></a>
+    </div>
+
+<br> 
+
+
+<script type="text/javascript">
+  function Help(){
+    document.getElementById("dialog").style.display="block";
+  }
+</script>
+<br>
+
+<input type="date"/>
+<br>
+<h3 id="demo" contenteditable="true"></h3>
+
+<script>
+const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+const d = new Date();
+let name = month[d.getMonth()];
+let year= d.getFullYear();
+document.getElementById("demo").innerHTML = name +', '+ year;
+document.getElementById("navDemo").innerHTML = name;
+
+function Reminder(){
+  const d= new Date();
+  const day=d.getDate();
+ 
+const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const months=month[d.getMonth()];
+  const mth = ["January","February","March","May","July","August","October","December"]
+
+  if(day == 31){
+      for(var i = 0; i < 2; i++){
+    alert("The month has ended.");
+      };
+    var conf = confirm("Would you like to clear all data to get a new page?");
+    if(conf == true){
+      localStorage.clear();
+    }
+  }
+  else if(months == "September","April","June","November" && day == 30){
+      for(var i = 0; i < 2;i++){
+    alert("The month has ended.");
+      }
+      var conf = confirm("Would you like to clear all data to get a new page?");
+    if(conf == true){
+      localStorage.clear();
+    }
+  }
+
+ 
+}
+
+         document.getElementById("tot-inp").value = getSavedValue("tot-inp");    // set the value to this input
+           // set the value to this input
+        /* Here you can add more inputs to set value. if it's saved */
+
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+
+</script>
+<br><br>
+
+<table class="table">
+  <tr class="tr">
+    <th>Date</th>
+    <th class="th">
+<input type="text" id="th_1" onkeyup='saveValue(this);' placeholder="HRS" class="th-input" /> 
+</th>
+    <th class="th">
+<input type="text" id="th_2" onkeyup='saveValue(this);' placeholder="VID" class="th-input" /> 
+</th>
+    <th class="th">
+<input type="text" id="th_3" onkeyup='saveValue(this);' placeholder="R.V" class="th-input" /> </th>
+    <th class="th">
+<input type="text" id="th_4" onkeyup='saveValue(this);' placeholder="PLC" class="th-input" /> </th>
+    <th class="th">
+<input type="text" id="th_5" onkeyup='saveValue(this);' placeholder="B.S" class="th-input" /> </th>
+
+
+
+<script type="text/javascript">
+        document.getElementById("th_1").value = getSavedValue("th_1");
+
+        document.getElementById("th_2").value = getSavedValue("th_2");
+
+
+          document.getElementById("th_3").value = getSavedValue("th_3");
+        
+        
+        document.getElementById("th_4").value = getSavedValue("th_4");
+        
+        
+        document.getElementById("th_5").value = getSavedValue("th_5");
+        
+        
+          // set the value to this input
+           // set the value to this input
+        /* Here you can add more inputs to set value. if it's saved */
+
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+  </tr>
+  <tr>
+    <td>1.</td>
+    <td><input type="number"  class="td-input" oninput="findTotal()"  name="hrs" id="hrs" onkeyup='saveValue(this);' />
+     </td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+
+
+  <tr>
+    <td>2.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs2"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid2" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv2" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc2" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs2" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+
+  <tr>
+    <td>3.</td>
+    <td><input type="number" class="td-input" name="hrs" id="hrs3" onkeyup='saveValue(this);' oninput="findTotal()"></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid3" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv3" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc3" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs3" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+
+   <tr>
+    <td>4.</td>
+    <td><input type="number" class="td-input" oninput="findTotal()" onkeyup='saveValue(this);' id="hrs4" name="hrs"></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid4" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv4" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc4" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs4" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+
+   <tr>
+    <td>5.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs5"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid5" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv5" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc5" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs5" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+
+
+   <tr>
+    <td>6.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs6"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid6" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv6" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc6" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs6" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr>
+    <td>7.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs7"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid7" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv7" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc7" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs7" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr>
+    <td>8.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs8"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid8" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv8" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc8" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs8" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr>
+    <td>9.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs9"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid9" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv9" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc9" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs9" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr>
+    <td>10.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs10"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid10" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv10" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc10" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs10" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr>
+    <td>11.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs11"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid11" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv11" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc11" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs11" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr>
+    <td>12.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs12"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid12" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv12" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc12" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs12" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr>
+    <td>13.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs13"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid13" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv13" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc13" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs13" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr>
+    <td>14.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs14"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid14" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv14" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc14" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs14" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+
+   <tr>
+    <td>15.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs15"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid15" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv15" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc15" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs15" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>16.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs16"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid16" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv16" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc16" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs16" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>17.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs17"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid17" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv17" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc17" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs17" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>18.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs18"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid18" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv18" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc18" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs18" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>19.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs19"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid19" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv19" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc19" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs19" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>20.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs20"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid20" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv20" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc20" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs20" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>21.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs21"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid21" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv21" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc21" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs21" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>22.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs22"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid22" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv22" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc22" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs22" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>23.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs23"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid23" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv23" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc23" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs23" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>24.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs24"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid24" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv24" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc24" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs24" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>25.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs25"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid25" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv25" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc25" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs25" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>26.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs26"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid26" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv26" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc26" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs26" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>27.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs27"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid27" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv27" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc27" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs27" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>28.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs28"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid28" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv28" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc28" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs28" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>29.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs29"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid29" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv29" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc29" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs29" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr>
+    <td>30.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs30"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid30" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv30" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc30" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs30" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr id="31">
+    <td>31.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs31"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid31" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv31" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc31" onkeyup='saveValue(this);' /></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs31" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+  
+  
+   <script type="text/javascript">
+         document.getElementById("hrs").value = getSavedValue("hrs");
+
+          document.getElementById("hrs2").value = getSavedValue("hrs2");
+
+           document.getElementById("hrs3").value = getSavedValue("hrs3");
+
+            document.getElementById("hrs4").value = getSavedValue("hrs4");
+
+          document.getElementById("hrs5").value = getSavedValue("hrs5");
+
+           document.getElementById("hrs6").value = getSavedValue("hrs6");
+
+           document.getElementById("hrs7").value = getSavedValue("hrs7");
+
+           document.getElementById("hrs8").value = getSavedValue("hrs8");
+
+           document.getElementById("hrs9").value = getSavedValue("hrs9");
+
+           document.getElementById("hrs10").value = getSavedValue("hrs10");
+
+           document.getElementById("hrs11").value = getSavedValue("hrs11");
+
+           document.getElementById("hrs12").value = getSavedValue("hrs12");
+
+           document.getElementById("hrs13").value = getSavedValue("hrs13");
+
+           document.getElementById("hrs14").value = getSavedValue("hrs14");
+           document.getElementById("hrs15").value = getSavedValue("hrs15");
+           document.getElementById("hrs16").value = getSavedValue("hrs16");
+           document.getElementById("hrs17").value = getSavedValue("hrs17");
+           document.getElementById("hrs18").value = getSavedValue("hrs18");
+           document.getElementById("hrs19").value = getSavedValue("hrs19");
+           document.getElementById("hrs20").value = getSavedValue("hrs20");
+           document.getElementById("hrs21").value = getSavedValue("hrs21");
+           document.getElementById("hrs22").value = getSavedValue("hrs22");
+           document.getElementById("hrs23").value = getSavedValue("hrs23");
+           document.getElementById("hrs24").value = getSavedValue("hrs24");
+           document.getElementById("hrs25").value = getSavedValue("hrs25");
+           document.getElementById("hrs26").value = getSavedValue("hrs26");
+           document.getElementById("hrs27").value = getSavedValue("hrs27");
+           document.getElementById("hrs28").value = getSavedValue("hrs28");
+           document.getElementById("hrs29").value = getSavedValue("hrs29");
+           document.getElementById("hrs30").value = getSavedValue("hrs30");
+           document.getElementById("hrs31").value = getSavedValue("hrs31");
+
+
+
+           
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+
+
+
+   <script type="text/javascript">
+         document.getElementById("vid").value = getSavedValue("vid");
+
+          document.getElementById("vid2").value = getSavedValue("vid2");
+
+           document.getElementById("vid3").value = getSavedValue("vid3");
+
+            document.getElementById("vid4").value = getSavedValue("vid4");
+
+          document.getElementById("vid5").value = getSavedValue("vid5");
+
+           document.getElementById("vid6").value = getSavedValue("vid6");
+
+           document.getElementById("vid7").value = getSavedValue("vid7");
+
+           document.getElementById("vid8").value = getSavedValue("vid8");
+
+           document.getElementById("vid9").value = getSavedValue("vid9");
+
+           document.getElementById("vid10").value = getSavedValue("vid10");
+
+           document.getElementById("vid11").value = getSavedValue("vid11");
+           document.getElementById("vid12").value = getSavedValue("vid12");
+           document.getElementById("vid13").value = getSavedValue("vid13");
+           document.getElementById("vid14").value = getSavedValue("vid14");
+           document.getElementById("vid15").value = getSavedValue("vid15");
+            document.getElementById("vid16").value = getSavedValue("vid16");
+             document.getElementById("vid17").value = getSavedValue("vid17");
+              document.getElementById("vid18").value = getSavedValue("vid18");
+               document.getElementById("vid19").value = getSavedValue("vid19");
+                document.getElementById("vid20").value = getSavedValue("vid20");
+                 document.getElementById("vid21").value = getSavedValue("vid21");
+                  document.getElementById("vid22").value = getSavedValue("vid22");
+                   document.getElementById("vid23").value = getSavedValue("vid23");
+                    document.getElementById("vid24").value = getSavedValue("vid24");
+                     document.getElementById("vid25").value = getSavedValue("vid25");
+                      document.getElementById("vid26").value = getSavedValue("vid26");
+                       document.getElementById("vid27").value = getSavedValue("vid27");
+                        document.getElementById("vid30").value = getSavedValue("vid28");
+                         document.getElementById("vid29").value = getSavedValue("vid29");
+                          document.getElementById("vid30").value = getSavedValue("vid30");
+                           document.getElementById("vid31").value = getSavedValue("vid31");
+ document.getElementById("video").value = getSavedValue("video");
+
+
+
+
+
+
+
+
+
+
+           
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+
+
+
+ <script type="text/javascript">
+         document.getElementById("rv").value = getSavedValue("rv");
+
+          document.getElementById("rv2").value = getSavedValue("rv2");
+
+           document.getElementById("rv3").value = getSavedValue("rv3");
+
+            document.getElementById("rv4").value = getSavedValue("rv4");
+
+          document.getElementById("rv5").value = getSavedValue("rv5");
+
+           document.getElementById("rv6").value = getSavedValue("rv6");
+
+           document.getElementById("rv7").value = getSavedValue("rv7");
+
+           document.getElementById("rv8").value = getSavedValue("rv8");
+
+           document.getElementById("rv9").value = getSavedValue("rv9");
+
+           document.getElementById("rv10").value = getSavedValue("rv10");
+
+           document.getElementById("rv11").value = getSavedValue("rv11");
+
+           document.getElementById("rv12").value = getSavedValue("rv12");
+
+           document.getElementById("rv13").value = getSavedValue("rv13");
+
+           document.getElementById("rv14").value = getSavedValue("rv14");
+            document.getElementById("rv15").value = getSavedValue("rv15");
+             document.getElementById("rv16").value = getSavedValue("rv16");
+              document.getElementById("rv17").value = getSavedValue("rv17");
+               document.getElementById("rv18").value = getSavedValue("rv18");
+                document.getElementById("rv19").value = getSavedValue("rv19");
+                 document.getElementById("rv20").value = getSavedValue("rv20"); 
+                 document.getElementById("rv21").value = getSavedValue("rv21");
+                  document.getElementById("rv22").value = getSavedValue("rv22"); 
+                  document.getElementById("rv23").value = getSavedValue("rv23");
+                   document.getElementById("rv24").value = getSavedValue("rv24");
+                    document.getElementById("rv25").value = getSavedValue("rv25");
+                     document.getElementById("rv26").value = getSavedValue("rv26");
+                      document.getElementById("rv27").value = getSavedValue("rv27");
+                       document.getElementById("rv28").value = getSavedValue("rv28");
+                        document.getElementById("rv29").value = getSavedValue("rv29");
+                         document.getElementById("rv30").value = getSavedValue("rv30");
+                          document.getElementById("rv31").value = getSavedValue("rv31");
+
+
+
+
+
+
+
+
+
+
+
+
+           
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+
+
+
+<script type="text/javascript">
+         document.getElementById("plc").value = getSavedValue("plc");
+
+          document.getElementById("plc2").value = getSavedValue("plc2");
+
+           document.getElementById("plc3").value = getSavedValue("plc3");
+
+            document.getElementById("plc4").value = getSavedValue("plc4");
+
+          document.getElementById("plc5").value = getSavedValue("plc5");
+
+           document.getElementById("plc6").value = getSavedValue("plc6");
+
+           document.getElementById("plc7").value = getSavedValue("plc7");
+
+
+           document.getElementById("plc8").value = getSavedValue("plc8");
+
+           document.getElementById("plc9").value = getSavedValue("plc9");
+
+
+           document.getElementById("plc10").value = getSavedValue("plc10");
+
+           document.getElementById("plc11").value = getSavedValue("plc11");
+
+           document.getElementById("plc12").value = getSavedValue("plc12");
+
+           document.getElementById("plc13").value = getSavedValue("plc13");
+
+           document.getElementById("plc14").value = getSavedValue("plc14");
+           document.getElementById("plc15").value = getSavedValue("plc15");
+           document.getElementById("plc16").value = getSavedValue("plc16");
+           document.getElementById("plc17").value = getSavedValue("plc17");
+           document.getElementById("plc18").value = getSavedValue("plc18");
+           document.getElementById("plc19").value = getSavedValue("plc19");
+           document.getElementById("plc20").value = getSavedValue("plc20");
+           document.getElementById("plc21").value = getSavedValue("plc21");
+           document.getElementById("plc22").value = getSavedValue("plc22");
+           document.getElementById("plc23").value = getSavedValue("plc23");
+           document.getElementById("plc24").value = getSavedValue("plc24");
+           document.getElementById("plc25").value = getSavedValue("plc25");
+           document.getElementById("plc26").value = getSavedValue("plc26");
+           document.getElementById("plc27").value = getSavedValue("plc27");
+           document.getElementById("plc28").value = getSavedValue("plc28");
+           document.getElementById("plc29").value = getSavedValue("plc29");
+           document.getElementById("plc30").value = getSavedValue("plc30");
+           document.getElementById("plc31").value = getSavedValue("plc31");
+
+
+
+
+
+
+
+
+
+
+
+           
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+
+
+<script type="text/javascript">
+         document.getElementById("bs").value = getSavedValue("bs");
+
+          document.getElementById("bs2").value = getSavedValue("bs2");
+
+           document.getElementById("bs3").value = getSavedValue("bs3");
+
+            document.getElementById("bs4").value = getSavedValue("bs4");
+
+          document.getElementById("bs5").value = getSavedValue("bs5");
+
+           document.getElementById("bs6").value = getSavedValue("bs6");
+
+           document.getElementById("bs7").value = getSavedValue("bs7");
+
+           document.getElementById("bs8").value = getSavedValue("bs8");
+
+           document.getElementById("bs9").value = getSavedValue("bs9");
+
+           document.getElementById("bs10").value = getSavedValue("bs10");
+
+           document.getElementById("bs11").value = getSavedValue("bs11");
+
+           document.getElementById("bs12").value = getSavedValue("bs12");
+
+           document.getElementById("bs13").value = getSavedValue("bs13");
+
+           document.getElementById("bs14").value = getSavedValue("bs14");
+           document.getElementById("bs15").value = getSavedValue("bs15");
+           document.getElementById("bs16").value = getSavedValue("bs16");
+           document.getElementById("bs17").value = getSavedValue("bs17");
+           document.getElementById("bs18").value = getSavedValue("bs18");
+           document.getElementById("bs19").value = getSavedValue("bs19");
+           document.getElementById("bs20").value = getSavedValue("bs20");
+           document.getElementById("bs21").value = getSavedValue("bs21");
+           document.getElementById("bs22").value = getSavedValue("bs22");
+           document.getElementById("bs23").value = getSavedValue("bs23");
+           document.getElementById("bs24").value = getSavedValue("bs24");
+           document.getElementById("bs25").value = getSavedValue("bs25");
+           document.getElementById("bs26").value = getSavedValue("bs26");
+           document.getElementById("bs27").value = getSavedValue("bs27");
+           document.getElementById("bs28").value = getSavedValue("bs28");
+           document.getElementById("bs29").value = getSavedValue("bs29");
+           document.getElementById("bs30").value = getSavedValue("bs30");
+           document.getElementById("bs31").value = getSavedValue("bs31");
+
+
+
+           
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+</table>
+<br><br>
+ 
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+  </label>
+</div> 
+
+   
+<script type="text/javascript">
+  
+  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }    
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark'); //add this
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light'); //add this
+    }    
+}
+
+
+
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+};
+</script>
+
+
+<div id="dialog" style="display: none;" class="dialog">
+  <div class="dialog_content">
+<h5 style=" font-size: 20px;">Terms of use</h5>
+<a style="font-size: 15px;">Welcome to this platform. This platform is a user-friendly platform.It allows you to input numbers and sum them for you. Just key in, and the input will be saved.</a>
+<br>
+<h6 class="h61">How it saves data</h6>
+<p style="font-size: 15px;">This platform is set to save your input to localstorage. These means when you clear your Browser's cache, it will affect the data.</p>
+<h6 class="h61">How to use</h6>
+<p style="font-size: 15px;">The input with the placeholder "HRS","VID","R.V","PLC" and "B.S" can be change to your own text.</p>
+<p style="font-size: 15px;">The month uses your system date and time changes so make sure your date and time are set properly</p>
+<p style="font-size: 15px;">The input created only allows you to input 'numbers'. So just input the number.</p>
+<p style="font-size: 15px;">Your input is saved automatically, so dont stress yourself saving anything.</p>
+<p style="font-size: 15px;">Your input sum up automatically to the "Total_Report" respectively.</p>
+<p style="font-size: 15px;">You can also "Add Note" if needed.</p>
+<p style="font-size: 15px;">In the "Total_Report" container, you can change the names in the input to your own choice. NB:Make sure the name in the Total_Report matches with the table's top names..</p>
+<p>By clicking the "clear all data" button , you agree to delete your data permanently from localstorage</p>
+<p>You can use clear all data button when you enter a new month</p>
+<b>Enjoy your day.</b>
+<br>
+<p id="ok" onclick="OK()" style="color: teal;cursor: pointer; text-align: right;">CLOSE</p>
+<br>
+<br>
+</div>
+</div>
+<script type="text/javascript">
+  function OK(){
+document.getElementById("dialog").style.display="none";
+  }
+</script>
+<form>
+  <fieldset>
+
+    <legend>Total_Report</legend>
+    <div class="form-group">
+     <input id="hours" style="padding: 6px 8px; border: none; background: transparent;" onkeyup='saveValue(this);' type="text" placeholder="Hours">
+      <input type="number" name="total" id="hrs-total" class="form-control prc" />
+    </div>
+    <br>
+     <div class="form-group">
+      <input id="video" style="padding: 6px 8px; border: none; background: transparent;" onkeyup='saveValue(this);' type="text" placeholder="VIdeos">
+      
+      <input type="number" name="total" id="vid-total" class="form-control prc" />
+    </div>
+    <br>
+     <div class="form-group">
+       <input id="Rs" style="padding: 6px 8px; border: none; background: transparent;" onkeyup='saveValue(this);' type="text" placeholder="Return Visit">
+      <input type="number" name="total" id="rv-total" class="form-control prc" />
+    </div>
+    <br>
+    <div class="form-group">
+     <input id="Plc" style="padding: 6px 8px; border: none; background: transparent;" onkeyup='saveValue(this);' type="text" placeholder="Placement">
+      <input type="number" name="total" id="plc-total" class="form-control prc" />
+    </div>
+    <br>
+   
+    <div class="form-group">
+       <input id="biS" style="padding: 6px 8px; border: none; background: transparent;" onkeyup='saveValue(this);' type="text" placeholder="Bible-Studies">
+      <input type="number" name="total" id="bs-total" class="form-control prc" />
+    </div>
+    
+  </fieldset>
+  <script>
+       document.getElementById("video").value = getSavedValue("video");
+       document.getElementById("biS").value = getSavedValue("biS");
+       document.getElementById("Plc").value = getSavedValue("Plc");
+       document.getElementById("Rs").value = getSavedValue("Rs");
+       document.getElementById("hours").value = getSavedValue("hours");
+
+
+
+           
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+</form>
+
+<br><br>
+
+<script type="text/javascript">
+  function addNote(){
+    var textarea= document.getElementById("tex");
+    var ptag= document.getElementById("ptag");
+    if(textarea.style.display==="none"){
+      textarea.style.display="block"
+      ptag.innerHTML="Hide Note";
+      
+    }
+
+    else if(textarea.style.display==="block" && ptag.innerHTML=="Hide Note"){
+      textarea.style.display="none";
+      ptag.innerHTML="Add Note";
+      
+    }
+
+  }
+
+
+function Clear(){
+    var result = confirm("Your data will be permanently deleted. You cannot retrieve back your data.");
+
+   if(result == true){
+    alert("Your data is permanently deleted!");
+    localStorage.clear();
+    window.location.reload()
+   }
+
+};
+//   const para = document.createElement("input");
+// para.innerText = "This is a paragraph";
+// document.body.appendChild(para);
+</script>
+<textarea type="number"  id="tex" onkeyup='saveValue(this);' placeholder="NOTE" style="width:100%;display: none; height: 150px; " class="textarea" ></textarea> 
+<br>
+<br>
+<button id="sms">Send Report Via Sms</button>
+<input type="text" id="msg">
+
+<script type="text/javascript">
+  var sms = document.getElementById("sms");
+  var phoneNom="0123456789";
+  var userMes=document.getElementById("msg").value;
+  var message ="My Total Report"+userMes;
+
+  sms.addEventListener("click", ()=>{
+    const link=document.createElement("a");
+    link.href=`sms:${phoneNom}?body=${encodeURIComponent(message)}`;
+    link.click();
+  });
+</script>
+<br>
+<br>
+
+<button onclick="Clear()" class="clear">Clear All Data</button>
+<br>
+ <footer>
+        <section class="ft-legal">
+                <p class="ft-p">Designed by <em><b>ASVAN-LAUNCHER</b></em></p>
+        </section>
+    </footer>
+
+    <br>
+<br>
+<script type="text/javascript">
+        document.getElementById("tex").value = getSavedValue("tex");    // set the value to this input
+           // set the value to this input
+        /* Here you can add more inputs to set value. if it's saved */
+
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+
+  <div class="navbarc" id="myNavbarc">
+             <a id="ptag" onclick="addNote()" class="fa fa-plus-square-o" title="Home"><br/><small class="smaller">Add Note</small></a>
+            <a onclick="window.print()" class="fa fa-file-pdf-o" title="library"><br/><small class="smaller">Print</small></a>
+            <a onclick="window.location.reload()" class="fa fa-repeat" title="contact"><br/><small class="smaller">Reload</small></a>
+             <a onclick="Help()" class="fa fa-eyedropper" title="search for"><br/><small class="smaller">Help</small></a>
+            
+        </div>
+
+</div>
+
+</body>
+
+  <script type="text/javascript">
+function findTotal(){
+    var arr = document.getElementsByName('hrs');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+    }
+    document.getElementById('hrs-total').value = tot;
+}
+
+    </script>
+
+
+
+  <script type="text/javascript">
+function findSol(){
+    var arr = document.getElementsByName('vid');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+    }
+    document.getElementById('vid-total').value = tot;
+}
+
+    </script>
+
+
+  <script type="text/javascript">
+function findRv(){
+    var arr = document.getElementsByName('rv');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+    }
+    document.getElementById('rv-total').value = tot;
+}
+
+    </script>
+
+
+
+  <script type="text/javascript">
+function findPlc(){
+    var arr = document.getElementsByName('plc');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+    }
+    document.getElementById('plc-total').value = tot;
+}
+
+    </script>
+
+
+  <script type="text/javascript">
+function findBs(){
+    var arr = document.getElementsByName('bs');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+    }
+    document.getElementById('bs-total').value = tot;
+}
+
+    </script>
+
+
+</html>
