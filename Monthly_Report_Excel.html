@@ -86,7 +86,7 @@ body {
 input[type="date"]::-webkit-calendar-picker-indicator {
     background: transparent;
     bottom: 0;
-    color: transparent;
+    color: black;
     cursor: pointer;
     height: auto;
     left: 0;
@@ -94,6 +94,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     right: 0;
     top: 0;
     width: auto;
+}
+a{
+    text-decoration: none;
+  color: green;
 }
 
 
@@ -110,7 +114,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 #nav {
-background-color: #262626;
+background-color: #000000;
     height: 40px;
     min-width: min-content;
     position: fixed;
@@ -118,8 +122,20 @@ background-color: #262626;
     }
 
 .textarea{
-  background-color: cornsilk;
-}
+  background-color: whitesmoke;
+padding-top: 30px;
+padding-bottom: 30px ;
+height: 100vh;
+width: 100%;
+padding-left: 20px;
+font-size: 20px;
+padding-right: 20px;
+ position: fixed;
+ overflow-x: hidden;
+ overflow-y: scroll;
+  left: 0;
+  top: 40px;
+  bottom: 0;
 	</style>
 
   <style type="text/css">
@@ -423,7 +439,7 @@ input:checked + .slider:before {
   text-transform: uppercase;
   font-weight: 700;
   font-family: cursive;
-  color: green;
+  color: orange;
 
 }
 
@@ -447,7 +463,7 @@ input:checked + .slider:before {
 }
 
 .text{
-  margin-top: 300px;
+  margin-top: 250px;
   font-family: sans-serif;
   font-size: 30px;
 }
@@ -497,13 +513,27 @@ input:checked + .slider:before {
 }
 
 
+.send{
+    background: transparent;
+    color: green;
+    padding: 10px 12px;
+    border-radius: 20px;
+    border: 1px solid green;
+    margin-right: 30%;
+    margin-left: 30%;
+}
 
-
+.day{
+  width: 100%;
+  padding: 10px 12px;
+  background-color: transparent;
+  
+}
 </style>
 </head>
 <body onload="Reminder()">
   <div id="preloader" onload="Pre()" class="preloader">
-    <h3 class="text">Monthly Report</h3>
+    <h3 class="text">My Report</h3>
   </div>
 
 
@@ -515,7 +545,7 @@ input:checked + .slider:before {
 </script>
   <div id="main" style="display:none;">
 	 <div id="nav">
-        <a style="color:gold;">Monthly Report</a>
+        <a style="color:gold;">My Report</a>
        <a id="navDemo" style="color: whitesmoke;position: absolute;right: 20px;"></a>
     </div>
 
@@ -527,46 +557,240 @@ input:checked + .slider:before {
     document.getElementById("dialog").style.display="block";
   }
 </script>
-<br>
-
-<input type="date"/>
-<br>
-<h3 id="demo" contenteditable="true"></h3>
+<div class="day">
+    <br />
+<input type="date" style="background-color:cornsilk;border:none;border-radius:20px;padding:10px 12px;color:black;"/>
+<h3 id="demo"></h3>
+</div>
+<br />
 
 <script>
 const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const day =["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
 
 const d = new Date();
 let name = month[d.getMonth()];
+let date = d.getDate();
+let dy=day[d.getDay()];
 let year= d.getFullYear();
-document.getElementById("demo").innerHTML = name +', '+ year;
-document.getElementById("navDemo").innerHTML = name;
+document.getElementById("demo").innerHTML = dy + ", "+ name + " " +date;
+document.getElementById("navDemo").innerHTML = year;
 
 function Reminder(){
   const d= new Date();
   const day=d.getDate();
+  var year=d.getFullYear();
  
 const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
   const months=month[d.getMonth()];
-  const mth = ["January","February","March","May","July","August","October","December"]
+  const mth = ["January","February","March","May","July","August","October","December"];
+  var isFired = localStorage.getItem('checkFired');
+
+  if (isFired != '1'){
+      var name=prompt("Hi, what is your name? eg:John")
+      alert("Welcome" + " "+ name +"! It seems this is your first time visiting this page. We make sure we provide the best for you. This page is a user_friendly page.\n Enjoy your day.");
+      localStorage.setItem('checkFired', '1');
+  }
+
+if(day == 11){
+ var id= document.getElementById("11");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 2){
+ var id= document.getElementById("2");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 3){
+ var id= document.getElementById("3");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 4){
+ var id= document.getElementById("4");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 5){
+ var id= document.getElementById("5");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 6){
+ var id= document.getElementById("6");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 7){
+ var id= document.getElementById("7");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 8){
+ var id= document.getElementById("8");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 9){
+ var id= document.getElementById("9");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 10){
+ var id= document.getElementById("10");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 12){
+ var id= document.getElementById("12");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 13){
+ var id= document.getElementById("13");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 14){
+ var id= document.getElementById("14");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 15){
+ var id= document.getElementById("15");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 16){
+ var id= document.getElementById("16");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 17){
+ var id= document.getElementById("17");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 18){
+ var id= document.getElementById("18");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 19){
+ var id= document.getElementById("19");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 20){
+ var id= document.getElementById("20");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 21){
+ var id= document.getElementById("21");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 22){
+ var id= document.getElementById("22");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 23){
+ var id= document.getElementById("23");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 24){
+ var id= document.getElementById("24");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 25){
+ var id= document.getElementById("25");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 26){
+ var id= document.getElementById("26");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 27){
+ var id= document.getElementById("27");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 28){
+ var id= document.getElementById("28");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 29){
+ var id= document.getElementById("29");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 30){
+ var id= document.getElementById("30");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+
 
   if(day == 31){
+
+ var id= document.getElementById("31");
+  id.style.color="orange";
+ id.style.display="table-row"
       for(var i = 0; i < 2; i++){
     alert("The month has ended.");
       };
-    var conf = confirm("Would you like to clear all data to get a new page?");
+   alert("Please you can send your report now.")
+  }
+
+  else if(months == "September" && day == 1 && year == 2023){
+      alert('The beginning of the special campaign month.')
+  }
+  
+  if(day ==1){
+    var id= document.getElementById("1");
+  id.style.color="orange";
+ id.style.display="table-row"
+      alert('Akwaaba! New month.');
+  var conf = confirm("Would you like to clear all data to get a new page for the new month.?");
     if(conf == true){
-      localStorage.clear();
+      var subconf = confirm("Are you sure you have send your report to your Group Overseer?");
+      if(subconf== true){
+          localStorage.clear();
+          alert("Your data is cleared successfully. Reload to see changes.")
+      }
     }
   }
   else if(months == "September","April","June","November" && day == 30){
       for(var i = 0; i < 2;i++){
     alert("The month has ended.");
       }
-      var conf = confirm("Would you like to clear all data to get a new page?");
-    if(conf == true){
-      localStorage.clear();
-    }
+     
   }
 
  
@@ -641,442 +865,441 @@ const month = ["January","February","March","April","May","June","July","August"
         //get the saved value function - return the value of "v" from localStorage. 
         function getSavedValue  (v){
             if (!localStorage.getItem(v)) {
-                return "";// You can change this to your defualt value. 
+                return "";// You can chohange this to your defualt value. 
             }
             return localStorage.getItem(v);
         }
 </script>
   </tr>
-  <tr>
+  <tr style="display:none;"id="1">
     <td>1.</td>
-    <td><input type="number"  class="td-input" oninput="findTotal()"  name="hrs" id="hrs" onkeyup='saveValue(this);' />
+    <td><input type="number"  class="td-input" oninput="findTotal()" onfocus="findTotal()"  name="hrs" id="hrs" onkeyup='saveValue(this);' />
      </td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs" onkeyup='saveValue(this);' /></td>
   </tr>
 
 
 
-  <tr>
+  <tr style="display:none;"id="2">
     <td>2.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs2"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs2"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid2" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid2" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv2" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv2" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc2" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc2" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs2" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs2" onkeyup='saveValue(this);' /></td>
   </tr>
 
 
-  <tr>
+  <tr style="display:none;"id="3">
     <td>3.</td>
-    <td><input type="number" class="td-input" name="hrs" id="hrs3" onkeyup='saveValue(this);' oninput="findTotal()"></td>
+    <td><input type="number" class="td-input" name="hrs" id="hrs3" onkeyup='saveValue(this);' oninput="findTotal()" onfocus="findTotal()"></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid3" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid3" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv3" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv3" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc3" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc3" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs3" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs3" onkeyup='saveValue(this);' /></td>
   </tr>
 
 
-   <tr>
+   <tr style="display:none;"id="4">
     <td>4.</td>
-    <td><input type="number" class="td-input" oninput="findTotal()" onkeyup='saveValue(this);' id="hrs4" name="hrs"></td>
+    <td><input type="number" class="td-input" oninput="findTotal()" onfocus="findTotal()" onkeyup='saveValue(this);' id="hrs4" name="hrs"></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid4" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid4" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv4" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv4" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc4" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc4" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs4" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs4" onkeyup='saveValue(this);' /></td>
   </tr>
 
 
-   <tr>
+   <tr style="display:none;"id="5">
     <td>5.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs5"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs5"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid5" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid5" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv5" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv5" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc5" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc5" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs5" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs5" onkeyup='saveValue(this);' /></td>
   </tr>
 
 
 
-   <tr>
+   <tr style="display:none;"id="6">
     <td>6.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs6"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs6"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid6" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid6" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv6" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv6" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc6" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc6" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs6" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs6" onkeyup='saveValue(this);' /></td>
   </tr>
   
-   <tr>
+   <tr style="display:none;"id="7">
     <td>7.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs7"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs7"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid7" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid7" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv7" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv7" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc7" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc7" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs7" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs7" onkeyup='saveValue(this);' /></td>
   </tr>
   
-   <tr>
+   <tr style="display:none;"id="8">
     <td>8.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs8"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs8"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid8" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid8" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv8" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv8" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc8" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc8" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs8" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs8" onkeyup='saveValue(this);' /></td>
   </tr>
   
-   <tr>
+   <tr style="display:none;"id="9">
     <td>9.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs9"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs9"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid9" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid9" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv9" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv9" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc9" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc9" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs9" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs9" onkeyup='saveValue(this);' /></td>
   </tr>
   
-   <tr>
+   <tr style="display:none;"id="10">
     <td>10.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs10"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs10"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid10" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid10" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv10" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv10" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc10" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc10" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs10" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs10" onkeyup='saveValue(this);' /></td>
   </tr>
   
-   <tr>
+   <tr style="display:none;" id="11">
     <td>11.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs11"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs11"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid11" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid11" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv11" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv11" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc11" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc11" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs11" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs11" onkeyup='saveValue(this);' /></td>
   </tr>
   
-   <tr>
+   <tr style="display:none;"id="12">
     <td>12.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs12"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs12"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid12" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid12" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv12" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv12" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc12" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc12" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs12" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs12" onkeyup='saveValue(this);' /></td>
   </tr>
   
-   <tr>
+   <tr style="display:none;"id="13">
     <td>13.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs13"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs13"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid13" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid13" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv13" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv13" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc13" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc13" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs13" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs13" onkeyup='saveValue(this);' /></td>
   </tr>
   
-   <tr>
+   <tr style="display:none;"id="14">
     <td>14.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs14"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs14"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid14" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid14" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv14" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv14" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc14" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc14" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs14" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs14" onkeyup='saveValue(this);' /></td>
   </tr>
 
 
-   <tr>
+   <tr style="display:none;"id="15">
     <td>15.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs15"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs15"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid15" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid15" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv15" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv15" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc15" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc15" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs15" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs15" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="16">
     <td>16.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs16"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs16"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid16" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid16" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv16" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv16" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc16" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc16" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs16" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs16" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="17">
     <td>17.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs17"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs17"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid17" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid17" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv17" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv17" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc17" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc17" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs17" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs17" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="18">
     <td>18.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs18"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs18"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid18" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid18" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv18" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv18" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc18" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc18" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs18" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs18" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="19">
     <td>19.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs19"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs19"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid19" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid19" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv19" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv19" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc19" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc19" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs19" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs19" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="20">
     <td>20.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs20"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs20"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid20" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid20" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv20" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv20" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc20" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc20" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs20" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs20" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="21">
     <td>21.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs21"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs21"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid21" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid21" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv21" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv21" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc21" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc21" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs21" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs21" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="22">
     <td>22.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs22"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs22"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid22" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid22" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv22" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv22" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc22" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc22" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs22" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs22" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="23">
     <td>23.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs23"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs23"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid23" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid23" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv23" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv23" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc23" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc23" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs23" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs23" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="24">
     <td>24.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs24"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs24"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid24" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid24" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv24" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv24" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc24" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc24" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs24" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs24" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="25">
     <td>25.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs25"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs25"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid25" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid25" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv25" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv25" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc25" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc25" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs25" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs25" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="26">
     <td>26.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs26"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs26"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid26" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid26" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv26" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv26" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc26" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc26" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs26" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs26" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="27">
     <td>27.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs27"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs27"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid27" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid27" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv27" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv27" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc27" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc27" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs27" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs27" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="28">
     <td>28.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs28"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs28"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid28" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid28" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv28" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv28" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc28" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc28" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs28" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs28" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="29">
     <td>29.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs29"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs29"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid29" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid29" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv29" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv29" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc29" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc29" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs29" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs29" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr>
+   <tr style="display:none;"id="30">
     <td>30.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs30"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs30"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid30" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid30" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv30" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv30" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc30" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc30" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs30" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs30" onkeyup='saveValue(this);' /></td>
   </tr>
 
   
-   <tr id="31">
+   <tr style="display:none;"id="31">
     <td>31.</td>
-    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()"  id="hrs31"  onkeyup='saveValue(this);'></td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs31"  onkeyup='saveValue(this);'></td>
 
-    <td><input type="number"  class="td-input" oninput="findSol()"  name="vid" id="vid31" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findSol()" onfocus="findSol()"  name="vid" id="vid31" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findRv()"  name="rv" id="rv31" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findRv()" onfocus="findRv()"  name="rv" id="rv31" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findPlc()"  name="plc" id="plc31" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findPlc()" onfocus="findPlc()"  name="plc" id="plc31" onkeyup='saveValue(this);' /></td>
 
-    <td><input type="number"  class="td-input" oninput="findBs()"  name="bs" id="bs31" onkeyup='saveValue(this);' /></td>
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs31" onkeyup='saveValue(this);' /></td>
   </tr>
 
-  
-  
+
   
    <script type="text/javascript">
          document.getElementById("hrs").value = getSavedValue("hrs");
@@ -1188,18 +1411,8 @@ const month = ["January","February","March","April","May","June","July","August"
                           document.getElementById("vid30").value = getSavedValue("vid30");
                            document.getElementById("vid31").value = getSavedValue("vid31");
  document.getElementById("video").value = getSavedValue("video");
-
-
-
-
-
-
-
-
-
-
            
-        //Save the value function - save it to localStorage as (ID, VALUE)
+        
         function saveValue(e){
             var id = e.id;  // get the sender's id to save it . 
             var val = e.value; // get the value. 
@@ -1434,7 +1647,90 @@ const month = ["January","February","March","April","May","June","July","August"
         }
 </script>
 </table>
-<br><br>
+
+
+<br>
+
+<a id="max" style="cursor: pointer;position: absolute;right: 20px;" onclick="Mx()">Max</a>
+<script type="text/javascript">
+  function Mx(){
+    var max =document.getElementById("max");
+      
+    
+    if(max.innerHTML == "Max"){
+      max.style.display="none"
+      document.getElementById('1').style.display="table-row";
+      document.getElementById('2').style.display="table-row";
+      document.getElementById('3').style.display="table-row";
+      document.getElementById('4').style.display="table-row";
+      document.getElementById('5').style.display="table-row";
+      document.getElementById('6').style.display="table-row";
+      document.getElementById('7').style.display="table-row";
+      document.getElementById('8').style.display="table-row";
+      document.getElementById('9').style.display="table-row";
+      document.getElementById('10').style.display="table-row";
+      document.getElementById('11').style.display="table-row";
+      document.getElementById('12').style.display="table-row";
+      document.getElementById('13').style.display="table-row";
+    
+      document.getElementById('14').style.display="table-row";
+      document.getElementById('15').style.display="table-row";
+      document.getElementById('16').style.display="table-row";
+      document.getElementById('17').style.display="table-row";
+       document.getElementById('18').style.display="table-row";
+       document.getElementById('19').style.display="table-row";
+       document.getElementById('20').style.display="table-row";
+       document.getElementById('21').style.display="table-row";
+       document.getElementById('22').style.display="table-row";
+       document.getElementById('23').style.display="table-row";
+       document.getElementById('24').style.display="table-row";
+       document.getElementById('25').style.display="table-row";
+       document.getElementById('26').style.display="table-row";
+       document.getElementById('27').style.display="table-row";
+       document.getElementById('28').style.display="table-row";
+       document.getElementById('29').style.display="table-row";
+       document.getElementById('30').style.display="table-row";
+       document.getElementById('31').style.display="table-row";
+      
+    }
+    // else if(max.innerHTML =="Min"){
+    //   max.innerHTML ="Max";
+    //   document.getElementById('1').style.display="none";
+    //   document.getElementById('2').style.display="none";
+    //   document.getElementById('3').style.display="none";
+    //   document.getElementById('4').style.display="none";
+    //   document.getElementById('5').style.display="none";
+    //   document.getElementById('6').style.display="none";
+    //   document.getElementById('7').style.display="none";
+    //   document.getElementById('8').style.display="none";
+    //   document.getElementById('9').style.display="none";
+    //   document.getElementById('10').style.display="none";
+      
+    //   document.getElementById('12').style.display="none";
+    //   document.getElementById('13').style.display="none";
+    
+    //   document.getElementById('14').style.display="none";
+    //   document.getElementById('15').style.display="none";
+    //   document.getElementById('16').style.display="none";
+    //    document.getElementById('17').style.display="none";
+    //    document.getElementById('18').style.display="none";
+    //    document.getElementById('19').style.display="none";
+    //    document.getElementById('20').style.display="none";
+    //    document.getElementById('21').style.display="none";
+    //    document.getElementById('22').style.display="none";
+    //    document.getElementById('23').style.display="none";
+    //    document.getElementById('24').style.display="none";
+    //    document.getElementById('25').style.display="none";
+    //    document.getElementById('26').style.display="none";
+    //    document.getElementById('27').style.display="none";
+    //    document.getElementById('28').style.display="none";
+    //    document.getElementById('29').style.display="none";
+    //    document.getElementById('30').style.display="none";
+      
+    // }
+  }
+</script>
+<br>
  
   <div class="theme-switch-wrapper">
     <label class="theme-switch" for="checkbox">
@@ -1491,11 +1787,14 @@ if (currentTheme) {
 <br>
 <h6 class="h61">How it saves data</h6>
 <p style="font-size: 15px;">This platform is set to save your input to localstorage. These means when you clear your Browser's cache, it will affect the data.</p>
+<h6 class="h61">Restrictions</h6>
+<p>You may not use any part of the web page, software, or its data to write another website or software product, whether this is done in exchange for money or not. </p>
 <h6 class="h61">How to use</h6>
 <p style="font-size: 15px;">The input with the placeholder "HRS","VID","R.V","PLC" and "B.S" can be change to your own text.</p>
 <p style="font-size: 15px;">The month uses your system date and time changes so make sure your date and time are set properly</p>
 <p style="font-size: 15px;">The input created only allows you to input 'numbers'. So just input the number.</p>
 <p style="font-size: 15px;">Your input is saved automatically, so dont stress yourself saving anything.</p>
+<p style="font-size: 15px;">To see all the input field click on the "Max" button.</p>
 <p style="font-size: 15px;">Your input sum up automatically to the "Total_Report" respectively.</p>
 <p style="font-size: 15px;">You can also "Add Note" if needed.</p>
 <p style="font-size: 15px;">In the "Total_Report" container, you can change the names in the input to your own choice. NB:Make sure the name in the Total_Report matches with the table's top names..</p>
@@ -1503,7 +1802,9 @@ if (currentTheme) {
 <p>You can use clear all data button when you enter a new month</p>
 <b>Enjoy your day.</b>
 <br>
-<p id="ok" onclick="OK()" style="color: teal;cursor: pointer; text-align: right;">CLOSE</p>
+<div style="background: transparent; position: fixed; bottom: 40px;right: 85px;">
+<p id="ok" onclick="OK()" style="color: red;cursor: pointer;">CLOSE</p>
+</div>
 <br>
 <br>
 </div>
@@ -1607,27 +1908,39 @@ function Clear(){
 // para.innerText = "This is a paragraph";
 // document.body.appendChild(para);
 </script>
-<textarea type="number"  id="tex" onkeyup='saveValue(this);' placeholder="NOTE" style="width:100%;display: none; height: 150px; " class="textarea" ></textarea> 
-<br>
-<br>
-<button id="sms">Send Report Via Sms</button>
-<input type="text" id="msg">
-
-<script type="text/javascript">
-  var sms = document.getElementById("sms");
-  var phoneNom="0123456789";
-  var userMes=document.getElementById("msg").value;
-  var message ="My Total Report"+userMes;
-
-  sms.addEventListener("click", ()=>{
-    const link=document.createElement("a");
-    link.href=`sms:${phoneNom}?body=${encodeURIComponent(message)}`;
-    link.click();
-  });
-</script>
+<textarea type="text"  id="tex" onkeyup='saveValue(this);' placeholder="NOTE" style="display: none; " class="textarea" ></textarea> 
 <br>
 <br>
 
+    <button class="send" id="send-sms">Send Report via SMS</button>
+<br />
+<br />
+<button class="send"><a href="https://api.whatsapp.com/send?phone=&text=Total_Report Bible-Studies: ,Return-Visit: , Placement: ,Videos: ,">Send Report via Whatsapp</a>
+</button>
+<br />
+<br />
+<button class="send">
+<a href="mailto:email@example.com?subject=Total_Report
+&body=Bible-Studies: ,Return-Visit: ,Placement: ,Videos:
+">Send Report via Email</a>
+</button>
+  
+    <script>
+      const button = document.getElementById("send-sms");
+      const phoneNumber = "";
+     var hrs = document.getElementById("hrs-total").value;
+      const message = "Total_Report\n\n HRS:" + hrs + ",\nBible-Studies:  ,\nReturn-Visit:  ,\nPlacement:  ,\nVideos:  ,";
+
+      button.addEventListener("click", () => {
+        const link = document.createElement("a");
+        link.href = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
+        link.click();
+      });
+    </script>
+    
+    <br />
+    <br />
+ <br />
 <button onclick="Clear()" class="clear">Clear All Data</button>
 <br>
  <footer>
@@ -1637,7 +1950,7 @@ function Clear(){
     </footer>
 
     <br>
-<br>
+
 <script type="text/javascript">
         document.getElementById("tex").value = getSavedValue("tex");    // set the value to this input
            // set the value to this input
@@ -1660,10 +1973,10 @@ function Clear(){
 </script>
 
   <div class="navbarc" id="myNavbarc">
-             <a id="ptag" onclick="addNote()" class="fa fa-plus-square-o" title="Home"><br/><small class="smaller">Add Note</small></a>
-            <a onclick="window.print()" class="fa fa-file-pdf-o" title="library"><br/><small class="smaller">Print</small></a>
-            <a onclick="window.location.reload()" class="fa fa-repeat" title="contact"><br/><small class="smaller">Reload</small></a>
-             <a onclick="Help()" class="fa fa-eyedropper" title="search for"><br/><small class="smaller">Help</small></a>
+             <a id="ptag" onclick="addNote()" class="fa fa-plus-square-o" title="Add note"><br/><small class="smaller">Add Note</small></a>
+            <a onclick="window.print()" class="fa fa-file-pdf-o" title="print this page"><br/><small class="smaller">Print</small></a>
+            <a onclick="window.location.reload()" class="fa fa-repeat" title="reload"><br/><small class="smaller">Reload</small></a>
+             <a onclick="Help()" class="fa fa-eyedropper" title="how to use"><br/><small class="smaller">Help</small></a>
             
         </div>
 
