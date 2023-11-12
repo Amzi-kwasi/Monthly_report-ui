@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+	<style type="text/css">
+
+		@charset "UTF-8";
+/******* Bootstrap Theming ********/
+@import "https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap";
+/*!
+ * Bootstrap v4.5.3 (https://getbootstrap.com/)
+ * Copyright 2011-2020 The Bootstrap Authors
+ * Copyright 2011-2020 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #E45F4E;
+  --secondary: #262626;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #ffffff;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: "Raleway", sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #848484;
+  background-color: #ffffff;
+}
+
+
+.input-container input {
+    border: none;
+    box-sizing: border-box;
+    outline: 0;
+    padding: .75rem;
+    position: relative;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+  color: green;
+}
+
+
+.ft-legal {
+    padding: 6px 8px;
+  background-color: #1a1a1a;
+  width: 100%;
+  
+}
+
+.ft-p{
+  text-align: center;
+  color: orange;
+}
+
+#nav {
+background-color: lightgrey;
+    padding: 10px 12px;
+    position: fixed;
+    width: 100%;
+    font-family: Sans-Serif;
+    font: bold;
+    }
+
+.textarea{
+  background-color: whitesmoke;
+padding-top: 30px;
+padding-bottom: 30px ;
+height: 100vh;
+width: 100%;
+padding-left: 20px;
+font-size: 20px;
+padding-right: 20px;
+ position: fixed;
+ overflow-x: hidden;
+ overflow-y: scroll;
+  left: 0;
+  top: 40px;
+  bottom: 0;
+}
+
+
+#Settings{
+  background-color: whitesmoke;
+padding-top: 30px;
+padding-bottom: 30px ;
+height: 100vh;
+width: 100%;
+padding-left: 20px;
+font-size: 20px;
+padding-right: 20px;
+ position: fixed;
+  left: 0;
+  top: 40px;
+  bottom: 0;
+	</style>
+
+  <style type="text/css">
+    .table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+   width: 100%;
+    }
+    td,.th{
+      border: 1px solid black;
+      padding: 2px;
+    }
+    .th-input[type="text"] {
+       padding: 8px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    }
+
+
+    .td-input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: none;
+    }
+
+
+  
+  label{
+    width: 100px;
+    float: left;
+    padding-top: 20px;
+  }
+  .form-control {
+    width: 200px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+  }
+
+
+  fieldset {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 3px;
+    border: 1px solid lightgrey;
+    width: 30px;
+    margin: auto;
+  }
+  .month-input{
+    padding: 8px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  
+  #contentmenu{
+      display: none;
+  }
+</style>
+
+<style type="text/css">
+  :root {
+    --primary-color: #302AE6;
+    --secondary-color: #536390;
+    --font-color: #424242;
+    --bg-color: #fff;
+    --heading-color: #292922;
+}
+
+[data-theme="dark"] {
+    --primary-color: #9A97F3;
+    --secondary-color: #818cab;
+    --font-color: #e1e1ff;
+    --bg-color: #000000;
+    --heading-color: #818cab;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+
+
+}
+
+
+
+[data-theme="dark"] .dialog_content {
+    color: white;
+    background-color: #262626;
+}
+
+
+[data-theme="dark"] td,.th{
+      border: 1px solid lightgrey;
+    }
+
+[data-theme="dark"] .navbarc a.act:hover {
+    color: green;
+    background-color: #ccffcc;
+    transition: 0.5s;
+}
+
+
+[data-theme="dark"] .navbarc{
+    
+    background-color: #262626;
+    transition: 0.5s;
+}
+
+[data-theme="dark"] #nav{
+    
+    background-color: #262626;
+    transition: 0.5s;
+}
+
+[data-theme="dark"] #nav a{
+    color: white !important;
+    transition: 0.5s;
+}
+
+
+[data-theme="dark"] .navbarc a{
+    color: white;
+}
+[data-theme="dark"] #myUL .raw a{
+  color: white;
+} 
+
+[data-theme="dark"] div.scrollmenu{
+  background-color: #262626;
+} 
+
+[data-theme="dark"] div.scrollmenu a{
+  color: white;
+}
+
+
+[data-theme="dark"] body{
+  color: white;
+  background-color: #000000;
+} 
+
+[data-theme="dark"] fieldset{
+  background-color: #1a1a1a;
+}
+
+[data-theme="dark"] .th{
+  background-color: #262626;
+  color: white;
+}
+
+[data-theme="dark"] input{
+  background-color: #262626;
+  color: white;
+}
+
+[data-theme="dark"] textarea{
+  background-color: #262626;
+  color: white;
+}
+
+[data-theme="dark"] .table{
+  background-color: #262626;
+}
+
+[data-theme="dark"] .search{
+  background-color: #262626;
+  color: white;
+}
+
+
+[data-theme="dark"] #myUL li a:hover:not(.header) {
+    background-color: #262626;
+    color: white;
+}
+
+[data-theme="dark"] .scrollmenu .scroact{
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+
+[data-theme="dark"] div.scrollmenu a:hover {
+    background-color: grey;
+    transition: 0.5s;
+}
+
+[data-theme="dark"] .slideshow-container{
+  background-color: #262626;
+}
+
+
+[data-theme="dark"] #Settings{
+  background-color: #000000;
+}
+
+
+
+[data-theme="dark"] .dot-container{
+  background-color: #262626;
+}
+
+[data-theme="dark"] footer{
+  background-color: #262626;
+  color: white;
+}
+[data-theme="dark"] .container {
+  background-color: #262626;
+}
+
+[data-theme="dark"] .row{
+  background-color: #262626;
+}
+
+
+
+
+.theme-switch {
+        height: 34px;
+        position: fixed;
+        bottom: 60px;
+        width: 30px;
+    }
+
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: grey;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.5s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: grey;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.add{
+  color: green;
+  cursor: pointer;
+  text-align: left;
+}
+
+
+.clear{
+  color: white;
+  border: none;
+  background-color: red;
+  border-radius: 10px;
+  padding: 10px 12px;
+  position: absolute;
+  right: 20px;
+}
+
+.dialog{
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  }
+
+.dialog_content{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: white;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 2% auto 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+  height: 99vh;
+}
+
+.h61{
+  font-size: 15px;
+}
+
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
+#demo {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: cursive;
+  color: orange;
+
+}
+
+
+#tdemo {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: cursive;
+  color: green;
+
+}
+
+.preloader{
+  background-color: #262626;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  color: white;
+}
+
+.text{
+  margin-top: 250px;
+  font-family: sans-serif;
+  font-size: 30px;
+}
+
+.navbarc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background:lightgrey;
+    padding: 2px 8px;
+    z-index: 1;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* Style the links inside the navigation bar */
+.navbarc a {
+    color: black;
+    text-align: center;
+    padding: 6px 8px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+
+/* Change the color of links on hover */
+.navbarc a:hover {
+
+    cursor: pointer;
+    border-radius: 10%;
+    color: orange;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+
+
+.navbarc a.act {
+    color: grey;
+}
+
+.navbarc a.act:hover {
+    color: whitesmoke;
+    background-color: black;
+    transition: 0.5s;
+}
+
+
+.send{
+    background: transparent;
+    color: green;
+    padding: 10px 12px;
+    border-radius: 20px;
+    border: 1px solid green;
+    margin-right: 30%;
+    margin-left: 30%;
+}
+
+.day{
+  width: 100%;
+  padding: 10px 12px;
+  background-color: transparent;
+  
+}
+.but{
+    padding: 10px 12px;
+    width: 100px;
+    margin-left: 35%;
+    margin-top: 95px;
+    margin-right: 35%;
+    border-radius: 20px;
+    color: black;
+    border: 1px solid green;
+}
+.but:hover{
+    background: green;
+    color: white;
+}
+
+#not{
+    text-align: center;
+    margin-top: 50%;
+    font-size: 22px;
+}
+
+@media only screen and (min-width: 600px){
+	#not{
+		margin-top: 10%;
+		font-size: 25px;
+	}
+}
+</style>
+</head>
+<body onload="Reminder()">
+  <div id="preloader" onload="Pre()" class="preloader">
+    <h3 class="text">My Report</h3>
+  </div>
+
+
+<script type="text/javascript">
+  setTimeout(function Pre(){
+    document.getElementById("preloader").style.display="none";
+    document.getElementById("main").style.display="block";
+  },2000)
+</script>
+  <div id="main" style="display:none;">
+	 <div id="nav">
+        <a style="color:black;">My Report</a>
+       <a id="navDemo" style="color: whitesmoke;position: absolute;right: 20px;"></a>
+    </div>
+
+<br> 
+
+
+<script type="text/javascript">
+  function Help(){
+    document.getElementById("dialog").style.display="block";
+  }
+</script>
+
+<p id="not">Nothing to show<br><br><a style="color:orange;" onclick="      document.getElementById('Settings').style.display='block'">Setup</a></p>
+<div id="contentmenu">
+<div class="day">
+    <br />
+<input type="date" style="background-color:whitesmoke;border:none;border-radius:20px;padding:10px 12px;width:120px;color:black;"/>
+<h3 id="demo"></h3>
+</div>
+<br />
+
+<script>
+const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const day =["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+
+const d = new Date();
+let name = month[d.getMonth()];
+let date = d.getDate();
+let dy=day[d.getDay()];
+let year= d.getFullYear();
+document.getElementById("demo").innerHTML = dy + ", "+ name + " " +date;
+document.getElementById("navDemo").innerHTML = year;
+
+function Reminder(){
+  const d= new Date();
+  const day=d.getDate();
+  var year=d.getFullYear();
+  
+  
+      var checked = JSON.parse(localStorage.getItem('checkbox1zaal1'));
+    document.getElementById("checkbox1zaal1").checked = checked;
+    
+    var checky = JSON.parse(localStorage.getItem('checkbox2'));
+    document.getElementById("checkbox2").checked = checky;
+ 
+ if(document.getElementById("checkbox1zaal1").checked == true){
+     
+     document.getElementById("contentmenu").style.display="block"
+     document.getElementById("not").style.display="none"
+ }
+ else{
+     document.getElementById("contentmenu").style.display="none"
+     document.getElementById("not").style.display="block"
+ }
+ 
+ 
+ 
+ 
+ if(document.getElementById("checkbox2").checked == true){
+     var pick=document.querySelectorAll(".pick")
+     for(let i =0; i < pick.length; i++){
+         pick[i].style.display="none"
+     }
+          document.getElementById("contentmenu").style.display="block"
+     document.getElementById("not").style.display="none"
+     document.getElementById("hrs-total").type="checkbox"
+     if(document.getElementById("hrs-total").type=="checkbox"){
+         
+     document.getElementById("hrs-total").style.width="50px"
+     }
+ }
+
+const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const months=month[d.getMonth()];
+  const mth = ["January","February","March","May","July","August","October","December"];
+  var isFired = localStorage.getItem('checkFired');
+
+  if (isFired != '1'){
+      var name=prompt("Hi, what is your name? eg:John")
+      alert("Welcome" + " "+ name +"! It seems this is your first time visiting this page. We make sure we provide the best for you. This page is a user_friendly page.\n Enjoy your day.");
+      alert("Click on 'Settings' on the bottom menu to setup the page")
+      document.getElementById("Settings").style.display="block"
+      localStorage.setItem('checkFired', '1');
+      
+      
+      if(isFired == "John"){
+          alert("yyy")
+      }
+  }
+  
+
+if(day == 11){
+ var id= document.getElementById("11");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 2){
+ var id= document.getElementById("2");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 3){
+ var id= document.getElementById("3");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 4){
+ var id= document.getElementById("4");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 5){
+ var id= document.getElementById("5");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 6){
+ var id= document.getElementById("6");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 7){
+ var id= document.getElementById("7");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 8){
+ var id= document.getElementById("8");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 9){
+ var id= document.getElementById("9");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 10){
+ var id= document.getElementById("10");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 12){
+ var id= document.getElementById("12");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+if(day == 13){
+ var id= document.getElementById("13");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 14){
+ var id= document.getElementById("14");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 15){
+ var id= document.getElementById("15");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 16){
+ var id= document.getElementById("16");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 17){
+ var id= document.getElementById("17");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 18){
+ var id= document.getElementById("18");
+  id.style.color="orange";
+ id.style.display="table-row"
+ 
+}
+
+if(day == 19){
+ var id= document.getElementById("19");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 20){
+ var id= document.getElementById("20");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 21){
+ var id= document.getElementById("21");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 22){
+ var id= document.getElementById("22");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 23){
+ var id= document.getElementById("23");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 24){
+ var id= document.getElementById("24");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 25){
+ var id= document.getElementById("25");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 26){
+ var id= document.getElementById("26");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 27){
+ var id= document.getElementById("27");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 28){
+ var id= document.getElementById("28");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 29){
+ var id= document.getElementById("29");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+if(day == 30){
+ var id= document.getElementById("30");
+  id.style.color="orange";
+ id.style.display="table-row"
+}
+
+
+
+  if(day == 31){
+
+ var id= document.getElementById("31");
+  id.style.color="orange";
+ id.style.display="table-row"
+      for(var i = 0; i < 2; i++){
+    alert("The month has ended.");
+      };
+   alert("Please you can send your report now.")
+  }
+
+  else if(months == "November" && day == 1 && year == 2023){
+      alert('New update.')
+  }
+  
+  if(day ==1){
+    var id= document.getElementById("1");
+  id.style.color="orange";
+ id.style.display="table-row"
+      alert('Akwaaba! New month.');
+  var conf = confirm("Would you like to clear all data to get a new page for the new month.?");
+    if(conf == true){
+      var subconf = confirm("Are you sure you want to clear your saves?");
+      if(subconf== true){
+          localStorage.clear();
+          alert("Your data is cleared successfully.")
+          window.location.reload()
+      }
+    }
+  }
+  else if(months == "September","April","June","November" && day == 30){
+      for(var i = 0; i < 2;i++){
+    alert("The month has ended.");
+      }
+      var conf = confirm("Would you like to clear all data to get a new page for the new month.?");
+    if(conf == true){
+      var subconf = confirm("Are you sure you want to clear your saves?");
+      if(subconf== true){
+          localStorage.clear();
+          alert("Your data is cleared successfully.")
+          window.location.reload()
+      }
+    }
+  }
+
+ 
+}
+
+         document.getElementById("tot-inp").value = getSavedValue("tot-inp");    // set the value to this input
+           // set the value to this input
+        /* Here you can add more inputs to set value. if it's saved */
+
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+
+</script>
+<br><br>
+
+
+<table class="table">
+  <tr class="tr">
+    <th>Date</th>
+    <th class="th pick">
+<input type="text" id="th_1" onkeyup='saveValue(this);' placeholder="HRS" class="th-input" /> 
+</th>
+    
+    <th class="th">
+<input type="text" id="th_5" onkeyup='saveValue(this);' placeholder="B.S" class="th-input" /> </th>
+
+
+
+<script type="text/javascript">
+        document.getElementById("th_1").value = getSavedValue("th_1");
+        
+        document.getElementById("th_5").value = getSavedValue("th_5");
+        
+        
+          // set the value to this input
+           // set the value to this input
+        /* Here you can add more inputs to set value. if it's saved */
+
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can chohange this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+  </tr>
+  <tr style="display:none;"id="1">
+    <td>1.</td>
+    <td class="pick"><input type="number"  class="td-input" oninput="findTotal()" onfocus="findTotal()"  name="hrs" id="hrs" onkeyup='saveValue(this);' />
+     </td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+
+
+  <tr style="display:none;"id="2">
+    <td>2.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs2"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs2" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+
+  <tr style="display:none;"id="3">
+    <td>3.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" id="hrs3" onkeyup='saveValue(this);' oninput="findTotal()" onfocus="findTotal()"></td>
+
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs3" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+
+   <tr style="display:none;"id="4">
+    <td>4.</td>
+    <td class="pick"><input type="number" class="td-input" oninput="findTotal()" onfocus="findTotal()" onkeyup='saveValue(this);' id="hrs4" name="hrs"></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs4" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+
+   <tr style="display:none;"id="5">
+    <td class="pick">5.</td>
+    <td><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs5"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs5" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+
+
+   <tr style="display:none;"id="6">
+    <td>6.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs6"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs6" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr style="display:none;"id="7">
+    <td>7.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs7"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs7" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr style="display:none;"id="8">
+    <td>8.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs8"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs8" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr style="display:none;"id="9">
+    <td>9.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs9"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs9" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr style="display:none;"id="10">
+    <td>10.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs10"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs10" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr style="display:none;" id="11">
+    <td>11.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs11"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs11" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr style="display:none;"id="12">
+    <td>12.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs12"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs12" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr style="display:none;"id="13">
+    <td>13.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs13"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs13" onkeyup='saveValue(this);' /></td>
+  </tr>
+  
+   <tr style="display:none;"id="14">
+    <td>14.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs14"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs14" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+
+   <tr style="display:none;"id="15">
+    <td>15.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs15"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs15" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="16">
+    <td>16.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs16"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs16" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="17">
+    <td>17.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs17"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs17" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="18">
+    <td>18.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs18"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs18" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="19">
+    <td>19.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs19"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs19" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="20">
+    <td>20.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs20"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs20" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="21">
+    <td>21.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs21"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs21" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="22">
+    <td>22.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs22"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs22" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="23">
+    <td>23.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs23"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs23" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="24">
+    <td>24.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs24"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs24" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="25">
+    <td>25.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs25"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs25" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="26">
+    <td>26.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs26"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs26" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="27">
+    <td>27.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs27"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs27" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="28">
+    <td>28.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs28"  onkeyup='saveValue(this);'></td>
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs28" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="29">
+    <td>29.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs29"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs29" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="30">
+    <td>30.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs30"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs30" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+  
+   <tr style="display:none;"id="31">
+    <td>31.</td>
+    <td class="pick"><input type="number" class="td-input" name="hrs" oninput="findTotal()" onfocus="findTotal()"  id="hrs31"  onkeyup='saveValue(this);'></td>
+
+
+    <td><input type="number"  class="td-input" oninput="findBs()" onfocus="findBs()"  name="bs" id="bs31" onkeyup='saveValue(this);' /></td>
+  </tr>
+
+
+  
+   <script type="text/javascript">
+         document.getElementById("hrs").value = getSavedValue("hrs");
+
+          document.getElementById("hrs2").value = getSavedValue("hrs2");
+
+           document.getElementById("hrs3").value = getSavedValue("hrs3");
+
+            document.getElementById("hrs4").value = getSavedValue("hrs4");
+
+          document.getElementById("hrs5").value = getSavedValue("hrs5");
+
+           document.getElementById("hrs6").value = getSavedValue("hrs6");
+
+           document.getElementById("hrs7").value = getSavedValue("hrs7");
+
+           document.getElementById("hrs8").value = getSavedValue("hrs8");
+
+           document.getElementById("hrs9").value = getSavedValue("hrs9");
+
+           document.getElementById("hrs10").value = getSavedValue("hrs10");
+
+           document.getElementById("hrs11").value = getSavedValue("hrs11");
+
+           document.getElementById("hrs12").value = getSavedValue("hrs12");
+
+           document.getElementById("hrs13").value = getSavedValue("hrs13");
+
+           document.getElementById("hrs14").value = getSavedValue("hrs14");
+           document.getElementById("hrs15").value = getSavedValue("hrs15");
+           document.getElementById("hrs16").value = getSavedValue("hrs16");
+           document.getElementById("hrs17").value = getSavedValue("hrs17");
+           document.getElementById("hrs18").value = getSavedValue("hrs18");
+           document.getElementById("hrs19").value = getSavedValue("hrs19");
+           document.getElementById("hrs20").value = getSavedValue("hrs20");
+           document.getElementById("hrs21").value = getSavedValue("hrs21");
+           document.getElementById("hrs22").value = getSavedValue("hrs22");
+           document.getElementById("hrs23").value = getSavedValue("hrs23");
+           document.getElementById("hrs24").value = getSavedValue("hrs24");
+           document.getElementById("hrs25").value = getSavedValue("hrs25");
+           document.getElementById("hrs26").value = getSavedValue("hrs26");
+           document.getElementById("hrs27").value = getSavedValue("hrs27");
+           document.getElementById("hrs28").value = getSavedValue("hrs28");
+           document.getElementById("hrs29").value = getSavedValue("hrs29");
+           document.getElementById("hrs30").value = getSavedValue("hrs30");
+           document.getElementById("hrs31").value = getSavedValue("hrs31");
+
+
+
+           
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+
+
+
+
+
+<script type="text/javascript">
+         document.getElementById("bs").value = getSavedValue("bs");
+
+          document.getElementById("bs2").value = getSavedValue("bs2");
+
+           document.getElementById("bs3").value = getSavedValue("bs3");
+
+            document.getElementById("bs4").value = getSavedValue("bs4");
+
+          document.getElementById("bs5").value = getSavedValue("bs5");
+
+           document.getElementById("bs6").value = getSavedValue("bs6");
+
+           document.getElementById("bs7").value = getSavedValue("bs7");
+
+           document.getElementById("bs8").value = getSavedValue("bs8");
+
+           document.getElementById("bs9").value = getSavedValue("bs9");
+
+           document.getElementById("bs10").value = getSavedValue("bs10");
+
+           document.getElementById("bs11").value = getSavedValue("bs11");
+
+           document.getElementById("bs12").value = getSavedValue("bs12");
+
+           document.getElementById("bs13").value = getSavedValue("bs13");
+
+           document.getElementById("bs14").value = getSavedValue("bs14");
+           document.getElementById("bs15").value = getSavedValue("bs15");
+           document.getElementById("bs16").value = getSavedValue("bs16");
+           document.getElementById("bs17").value = getSavedValue("bs17");
+           document.getElementById("bs18").value = getSavedValue("bs18");
+           document.getElementById("bs19").value = getSavedValue("bs19");
+           document.getElementById("bs20").value = getSavedValue("bs20");
+           document.getElementById("bs21").value = getSavedValue("bs21");
+           document.getElementById("bs22").value = getSavedValue("bs22");
+           document.getElementById("bs23").value = getSavedValue("bs23");
+           document.getElementById("bs24").value = getSavedValue("bs24");
+           document.getElementById("bs25").value = getSavedValue("bs25");
+           document.getElementById("bs26").value = getSavedValue("bs26");
+           document.getElementById("bs27").value = getSavedValue("bs27");
+           document.getElementById("bs28").value = getSavedValue("bs28");
+           document.getElementById("bs29").value = getSavedValue("bs29");
+           document.getElementById("bs30").value = getSavedValue("bs30");
+           document.getElementById("bs31").value = getSavedValue("bs31");
+
+
+
+           
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+</table>
+
+
+<br>
+
+<a id="max" style="cursor: pointer;position: absolute;right: 20px;" onclick="Mx()">Max</a>
+<script type="text/javascript">
+  function Mx(){
+    var max =document.getElementById("max");
+      
+    
+    if(max.innerHTML == "Max"){
+      max.style.display="none"
+      document.getElementById('1').style.display="table-row";
+      document.getElementById('2').style.display="table-row";
+      document.getElementById('3').style.display="table-row";
+      document.getElementById('4').style.display="table-row";
+      document.getElementById('5').style.display="table-row";
+      document.getElementById('6').style.display="table-row";
+      document.getElementById('7').style.display="table-row";
+      document.getElementById('8').style.display="table-row";
+      document.getElementById('9').style.display="table-row";
+      document.getElementById('10').style.display="table-row";
+      document.getElementById('11').style.display="table-row";
+      document.getElementById('12').style.display="table-row";
+      document.getElementById('13').style.display="table-row";
+    
+      document.getElementById('14').style.display="table-row";
+      document.getElementById('15').style.display="table-row";
+      document.getElementById('16').style.display="table-row";
+      document.getElementById('17').style.display="table-row";
+       document.getElementById('18').style.display="table-row";
+       document.getElementById('19').style.display="table-row";
+       document.getElementById('20').style.display="table-row";
+       document.getElementById('21').style.display="table-row";
+       document.getElementById('22').style.display="table-row";
+       document.getElementById('23').style.display="table-row";
+       document.getElementById('24').style.display="table-row";
+       document.getElementById('25').style.display="table-row";
+       document.getElementById('26').style.display="table-row";
+       document.getElementById('27').style.display="table-row";
+       document.getElementById('28').style.display="table-row";
+       document.getElementById('29').style.display="table-row";
+       document.getElementById('30').style.display="table-row";
+       document.getElementById('31').style.display="table-row";
+      
+    }
+    // else if(max.innerHTML =="Min"){
+    //   max.innerHTML ="Max";
+    //   document.getElementById('1').style.display="none";
+    //   document.getElementById('2').style.display="none";
+    //   document.getElementById('3').style.display="none";
+    //   document.getElementById('4').style.display="none";
+    //   document.getElementById('5').style.display="none";
+    //   document.getElementById('6').style.display="none";
+    //   document.getElementById('7').style.display="none";
+    //   document.getElementById('8').style.display="none";
+    //   document.getElementById('9').style.display="none";
+    //   document.getElementById('10').style.display="none";
+      
+    //   document.getElementById('12').style.display="none";
+    //   document.getElementById('13').style.display="none";
+    
+    //   document.getElementById('14').style.display="none";
+    //   document.getElementById('15').style.display="none";
+    //   document.getElementById('16').style.display="none";
+    //    document.getElementById('17').style.display="none";
+    //    document.getElementById('18').style.display="none";
+    //    document.getElementById('19').style.display="none";
+    //    document.getElementById('20').style.display="none";
+    //    document.getElementById('21').style.display="none";
+    //    document.getElementById('22').style.display="none";
+    //    document.getElementById('23').style.display="none";
+    //    document.getElementById('24').style.display="none";
+    //    document.getElementById('25').style.display="none";
+    //    document.getElementById('26').style.display="none";
+    //    document.getElementById('27').style.display="none";
+    //    document.getElementById('28').style.display="none";
+    //    document.getElementById('29').style.display="none";
+    //    document.getElementById('30').style.display="none";
+      
+    // }
+  }
+</script>
+<br>
+ 
+
+<script type="text/javascript">
+  function OK(){
+document.getElementById("dialog").style.display="none";
+  }
+</script>
+<form>
+  <fieldset>
+
+    <legend>Total_Report</legend>
+    <div class="form-group">
+     <input  id="hours" style="padding: 6px 8px; border: none; background: transparent;" onkeyup='saveValue(this);' type="text" placeholder="Hours">
+      <input type="number" name="total" id="hrs-total" class="form-control prc" />
+    </div>
+    <br>
+    <br>
+   
+    <div class="form-group">
+       <input id="biS" style="padding: 6px 8px; border: none; background: transparent;" onkeyup='saveValue(this);' type="text" placeholder="Bible-Studies">
+      <input type="number" name="total" id="bs-total" class="form-control prc" />
+    </div>
+    
+  </fieldset>
+  <script>
+      
+       document.getElementById("biS").value = getSavedValue("biS");
+       
+       document.getElementById("hours").value = getSavedValue("hours");
+
+
+
+           
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+</form>
+
+<br><br>
+
+<script type="text/javascript">
+  
+
+function Clear(){
+    var result = confirm("Your data will be permanently deleted. You cannot retrieve back your data.");
+
+   if(result == true){
+    alert("Your data is permanently deleted!");
+    localStorage.clear();
+    window.location.reload()
+   }
+
+};
+//   const para = document.createElement("input");
+// para.innerText = "This is a paragraph";
+// document.body.appendChild(para);
+</script>
+<br>
+
+    <button class="send" id="send-sms">Send Report via SMS</button>
+<br />
+<br />
+<button class="send"><a href="https://api.whatsapp.com/send?phone=&text=Total_Report Bible-Studies: ,Hours:">Send Report via Whatsapp</a>
+</button>
+<br />
+<br />
+<button class="send">
+<a href="mailto:email@example.com?subject=Total_Report
+&body=Bible-Studies: ,Hours: ,
+">Send Report via Email</a>
+</button>
+  
+    <script>
+      const button = document.getElementById("send-sms");
+      const phoneNumber = "";
+     var hrs = document.getElementById("hrs-total").value;
+      const message = "Total_Report\n\n HRS:" + hrs + ",\nBible-Studies:  ";
+
+      button.addEventListener("click", () => {
+        const link = document.createElement("a");
+        link.href = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
+        link.click();
+      });
+    </script>
+    
+    <br />
+    <br />
+ <br />
+<button onclick="Clear()" class="clear">Clear All Data</button>
+<br>
+
+    <br>
+            </div>
+
+
+<div id="dialog" style="display: none;" class="dialog">
+  <div class="dialog_content">
+<h5 style=" font-size: 20px;">Terms of use</h5>
+<a style="font-size: 15px;">Welcome to this platform. This platform is a user-friendly platform. It allows users to save their monthly report. We make sure to update the page when there is an error.</a>
+<br>
+<h6 class="h61">Setup</h6>
+<p>Click on "Settings" on the bottom navigation, and setup the page.</p>
+<br>
+<h6 class="h61">How it saves data</h6>
+<p style="font-size: 15px;">This platform is set to save your input to localstorage. These means when you clear your Browser's cache, it will affect the data.</p>
+<h6 class="h61">Restrictions</h6>
+<p>You may not use any part of the web page, software, or its data to write another website or software product, whether this is done in exchange for money or not. </p>
+<h6 class="h61">How to use</h6>
+<p style="font-size: 15px;">You can change input names.</p>
+<p style="font-size: 15px;">The month uses your system date and time changes so make sure your date and time are set properly</p>
+<p style="font-size: 15px;">Your input is saved automatically, so no need for a save button</p>
+<p style="font-size: 15px;">To see all the input field click on the "Max" button.</p>
+<p style="font-size: 15px;">Your input sum up automatically to the "Total_Report" respectively.</p>
+<p style="font-size: 15px;">You can also "Add Note" if needed.</p>
+<p style="font-size: 15px;">In the "Total_Report" container, you can change the names in the input to your own choice. NB:Make sure the name in the Total_Report matches with the table's top names..</p>
+<p>By clicking the "clear all data" button , you agree to delete your data permanently from localstorage</p>
+<p>You can use clear all data button when you enter a new month</p>
+<b>Enjoy your day.</b>
+<br>
+<div style="background: transparent; position: fixed; bottom: 40px;right: 85px;">
+<p id="ok" onclick="OK()" style="color: red;cursor: pointer;">CLOSE</p>
+</div>
+<br>
+<br>
+</div>
+</div>
+
+
+<textarea type="text"  id="tex" onkeyup='saveVale(this);' placeholder="NOTE" style="display: none; " class="textarea" ></textarea> 
+
+<script type="text/javascript">
+        document.getElementById("tex").value = getSavedValue("tex");    // set the value to this input
+           // set the value to this input
+        /* Here you can add more inputs to set value. if it's saved */
+
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveVale(e){
+            var id = e.id;  // get the sender's id to save it . 
+            var val = e.value; // get the value. 
+            localStorage.setItem(id, val);
+        }
+
+        //get the saved value function - return the value of "v" from localStorage. 
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value. 
+            }
+            return localStorage.getItem(v);
+        }
+</script>
+
+<br>
+<script>
+function addN(){
+    var field=document.getElementById("tex");
+    var add=document.getElementById("ptag")
+ 
+        if(field.style.display === "none"){
+            field.style.display="block";
+          add.innerText="Hide"
+         document.getElementById("Settings").style.display="none"
+          add.style.height="none"
+        
+        }
+        else if(field.style.display === "block"){
+            field.style.display="none";
+
+            add.innerText="Add"
+          
+          
+
+        }
+    }
+    
+    function home(){
+        var field=document.getElementById("tex");
+            var st=document.getElementById("Settings")
+    st.style.display="none"
+        field.style.display="none"
+        
+    }
+</script>
+
+
+    
+        <br>
+
+        
+          <div class="navbarc" id="myNavbarc">
+              
+           <a onclick="home()" class="fa fa-home" title="print this page"><br/><small class="smaller">Home</small></a>
+             <a id="ptag" onclick="addN()" class="fa fa-plus-square-o" title="Add note"><br/><small class="smaller">Add Note</small></a>
+
+
+            <a onclick="window.location.reload()" class="fa fa-repeat" title="reload"><br/><small class="smaller">Reload</small></a>
+             <a onclick="Help()" class="fa fa-eyedropper" title="how to use"><br/><small class="smaller">Help</small></a>
+            
+            <a onclick="settings()" class="fa fa-cog" title="reload"><br/><small class="smaller">Settings</small></small></a>
+
+        </div>
+        
+        
+<script>
+function saved(){
+    var checkbox = document.getElementById('checkbox1zaal1');
+    
+    var checkbog = document.getElementById('checkbox2');
+    localStorage.setItem('checkbox2', checkbog.checked);
+    
+    localStorage.setItem('checkbox1zaal1', checkbox.checked);
+    window.location.reload()
+}
+
+function settings(){
+    var st=document.getElementById("Settings")
+    st.style.display="block"
+}
+        </script>
+        <div id="Settings" style="display:none;">
+            <h4 style="text-align:left;color:orange;font-size:20px">Settings</h4>
+            <small>Choose only one to setup the page. Remember to "save" changes</small>
+     <br>
+     <br><br>
+<input type="checkbox" id="checkbox1zaal1"><small>[Aux pioneer,pioneers etc. only]</a></input>
+     <br>
+     <br>
+<input type="checkbox" id="checkbox2">Publishers only</input>
+<br>
+        <input class="but" type="button" id="ReserveerButton1" value="save" onclick="saved()"/>
+</div>
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+  </label>
+</div> 
+   
+<script type="text/javascript">
+  
+  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }    
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark'); //add this
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light'); //add this
+    }    
+}
+
+
+
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+};
+</script>
+
+
+
+</div>
+
+</body>
+
+  <script type="text/javascript">
+function findTotal(){
+    var arr = document.getElementsByName('hrs');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+    }
+    document.getElementById('hrs-total').value = tot;
+}
+
+    </script>
+
+
+
+  <script type="text/javascript">
+function findBs(){
+    var arr = document.getElementsByName('bs');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+    }
+    document.getElementById('bs-total').value = tot;
+}
+
+    </script>
+
+
+</html>
